@@ -61,7 +61,6 @@ export default {
         >.title{
         margin-top: 0.5vw;
         font-size: 2vw;
-        // color: #7f7f7f;
       }
       }
     }
