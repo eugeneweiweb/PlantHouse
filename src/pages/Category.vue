@@ -1,5 +1,7 @@
 <template>
-  <div class="category">Mall</div>
+  <div class="category">
+    category
+  </div>
 </template>
 
 <script>

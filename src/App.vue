@@ -66,6 +66,7 @@ export default {
 
   html,
   body{
+    box-sizing: border-box;
     height: 100%;
     overflow: hidden;
   }
