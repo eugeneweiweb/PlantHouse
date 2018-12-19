@@ -26,3 +26,8 @@ ajax.interceptors.response.use(resp => {
 export const getSwiper = () => {
   return ajax.get('/api/v1.0.0.0/swiper')
 }
+
+// 获取侧边栏类型方法
+export const getCategories = () => {
+  return ajax.get('/api/v1.0.0.0/categories')
+}

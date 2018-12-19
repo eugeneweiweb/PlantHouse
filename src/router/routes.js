@@ -41,8 +41,8 @@ const routes = [
     },
     children: [
       {
-        path: 'category',
-        name: 'category',
+        path: ':categoriesId',
+        name: 'categories',
         components: {
           default: Category,
           fheader: fheader
