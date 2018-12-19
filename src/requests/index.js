@@ -4,6 +4,7 @@ const ajax = axios.create({
   baseURL: 'http://rap2api.taobao.org/app/mock/121685'
 })
 
+// 全局拦截
 ajax.interceptors.request.use(config => {
   Indicator.open('加载中……')
   return config
@@ -30,4 +31,9 @@ export const getSwiper = () => {
 // 获取侧边栏类型方法
 export const getCategories = () => {
   return ajax.get('/api/v1.0.0.0/categories')
+}
+
+// 获取分类商品列表方法
+export const getProductList = (categoriesId) => {
+  return ajax.get(`/api/v1.0.0.0/categories/${categoriesId}`)
 }

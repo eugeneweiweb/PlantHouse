@@ -31,10 +31,13 @@ export default {
           vm.categories = resp
           vm.$nextTick()
             .then(() => {
+              // 如果是父级跳转过来的就不会有categoriesId，则跳转到第一个分类，
+              // 如果之前是子页面就有对应的categoriesId，则会跳到之前页面
+              const categoriesId = to.params.categoriesId || resp[0].id
               vm.$router.push({
                 name: 'categories',
                 params: {
-                  categoriesId: resp[0].id
+                  categoriesId
                 }
               })
             })
@@ -58,7 +61,7 @@ export default {
     height: 100%;
     overflow: hidden;
     >.left{
-      width: 20%;
+      width: 25%;
       background-color: #ddd;
       overflow-x: hidden;
       ul{
