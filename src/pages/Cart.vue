@@ -3,7 +3,11 @@
     <div v-if="cartIsNotEmpty">
       <table>
         <thead>
-          <th><input type="checkbox">全选</th>
+          <th><input
+            type="checkbox"
+            :checked="isAllCartItemChecked"
+            @change="handleCartAllChecked"
+          >全选</th>
           <th>ID</th>
           <th>Title</th>
           <th>Price</th>
@@ -13,7 +17,10 @@
           v-for="item in cart"
           :key="item.id"
         >
-          <th><input type="checkbox" :checked=item.isChecked></th>
+          <th><input type="checkbox"
+            :checked=item.isChecked
+            @change="handelItemCheckedChange(item.id)"
+          ></th>
           <th>{{item.id}}</th>
           <th>{{item.title}}</th>
           <th>{{item.price}}</th>
@@ -45,13 +52,16 @@ export default {
     ...mapGetters([
       'cartIsNotEmpty',
       'cartCheckedCount',
-      'cartCheckedPrice'
+      'cartCheckedPrice',
+      'isAllCartItemChecked'
     ])
   },
   methods: {
     ...mapMutations([
       mutationTypes.addCartItemCount,
-      mutationTypes.reduceCartItemCount
+      mutationTypes.reduceCartItemCount,
+      mutationTypes.handelItemCheckedChange,
+      mutationTypes.handleCartAllChecked
     ])
   }
 }
