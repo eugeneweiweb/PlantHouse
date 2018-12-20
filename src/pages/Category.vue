@@ -4,6 +4,7 @@
       :key="item.id"
       v-for="item in list"
       class="list-item"
+      tag="div"
       :to="{
         name: 'details',
         params: {
@@ -22,7 +23,9 @@
               <b>{{item.name}}</b>
             </div>
             <div class="addToCart">
-              <span>添加</span>
+              <span
+                @click.stop="addToCart(item)"
+              >添加</span>
             </div>
           </div>
           <i>{{item.title}}</i>
@@ -33,6 +36,12 @@
 </template>
 
 <script>
+
+import {
+  mapMutations
+} from 'vuex'
+import * as mutationTypes from '../store/mutationTypes'
+
 export default {
   name: 'category',
   beforeRouteEnter (to, from, next) {
@@ -56,6 +65,11 @@ export default {
     return {
       list: []
     }
+  },
+  methods: {
+    ...mapMutations([
+      mutationTypes.addToCart
+    ])
   }
 }
 </script>
