@@ -38,6 +38,8 @@ export default {
     url('http://at.alicdn.com/t/font_972272_jfpufe7myfk.svg#iconfont') format('svg');
   }
   .tabbar{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     display: flex;
     height: 100%;
     justify-content: space-around;

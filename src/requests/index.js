@@ -37,3 +37,8 @@ export const getCategories = () => {
 export const getProductList = (categoriesId) => {
   return ajax.get(`/api/v1.0.0.0/categories/${categoriesId}`)
 }
+
+// 获取商品详情方法
+export const getProductDetail = (productId) => {
+  return ajax.get(`/api/v1.0.0.0/detail/${productId}`)
+}

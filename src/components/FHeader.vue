@@ -1,8 +1,9 @@
 <template>
   <div class="fheader">
-    <div class="fheader-search">
+    <mt-header class="fheader-search" title="PlantHouse">
+      <mt-button @click="$router.back()" slot="left" icon="back">返回</mt-button>
       <input type="search" placeholder="搜索呢喜欢的商品"/>
-    </div>
+    </mt-header>
     <div class="set">
     </div>
   </div>

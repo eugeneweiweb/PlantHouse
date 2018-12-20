@@ -5,6 +5,9 @@ import App from './App'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import router from './router'
+
+// 引入vuex store
+import store from './store'
 // 将requests里的所有方法引入,加入到$http里
 import * as $http from './requests'
 
@@ -17,6 +20,7 @@ Vue.use(MintUI)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

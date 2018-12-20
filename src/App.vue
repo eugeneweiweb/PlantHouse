@@ -86,7 +86,6 @@ export default {
       height: 11vw;
     }
     &-tabbar{
-      height: 12vw;
       border-top: 1px solid #d3d3d3;
     }
   }
