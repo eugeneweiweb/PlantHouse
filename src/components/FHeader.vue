@@ -1,7 +1,7 @@
 <template>
   <div class="fheader">
     <mt-header class="fheader-search" title="PlantHouse">
-      <mt-button @click="$router.back()" slot="left" icon="back">返回</mt-button>
+      <mt-button v-if="isShowBack" @click="$router.back()" slot="left" icon="back">返回</mt-button>
       <input type="search" placeholder="搜索呢喜欢的商品"/>
     </mt-header>
     <div class="set">
@@ -10,9 +10,17 @@
 </template>
 
 <script>
+import {
+  mapState
+} from 'vuex'
 
 export default {
-  name: 'fheader'
+  name: 'fheader',
+  computed: {
+    ...mapState([
+      'isShowBack'
+    ])
+  }
 }
 </script>
 
