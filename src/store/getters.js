@@ -28,5 +28,12 @@ export default {
     return state.cart.every(item => {
       return item.isChecked === true
     })
+  },
+  // 购物车计数标记
+  cartCountBadge (state) {
+    return state.cart.reduce((total, item) => {
+      total += item.count
+      return total
+    }, 0)
   }
 }
