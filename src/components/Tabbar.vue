@@ -9,7 +9,7 @@
       <div class="icon">
         <mt-badge v-if="route.name === 'cart' && cartIsNotEmpty" size="small" color="red" class="badge">{{cartCountBadge | formatCount}}</mt-badge>
         <i class="iconfont" v-html="route.icon"></i>
-        <div class="title">{{route.title}}</div>
+        <div class="title">{{route.meta.title}}</div>
       </div>
     </router-link>
   </div>
