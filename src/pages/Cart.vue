@@ -14,7 +14,7 @@
           <dd>
             <i>{{item.name}}  {{item.title}}</i>
             <p>
-              <em>￥{{item.price}}</em>
+              <em>￥{{item.price | toFix}}</em>
               <input type="button" value="-" @click="reduceCartItemCount">
               <span>{{item.count}}</span>
               <input type="button" value="+" @click="addCartItemCount">
@@ -23,7 +23,7 @@
       </div>
       <footer>
         <label><input type="checkbox" class="select-all" :checked="isAllCartItemChecked" @change="handleCartAllChecked">全选</label>
-        <span>合计：<em>￥{{cartCheckedPrice}}</em></span>
+        <span>合计：<em>￥{{cartCheckedPrice | toFix}}</em></span>
         <button>结算</button>
       </footer>
     </div>
@@ -50,7 +50,8 @@ export default {
       'cartIsNotEmpty',
       'cartCheckedCount',
       'cartCheckedPrice',
-      'isAllCartItemChecked'
+      'isAllCartItemChecked',
+      'toFix'
     ])
   },
   methods: {
