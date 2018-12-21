@@ -7,9 +7,19 @@ import getters from './getters'
 
 Vue.use(Vuex)
 
+// 一个vuex的插件
+const syncStorage = (store) => {
+  // 当store初始化后就会调用
+  store.subscribe((mutation, state) => {
+    // 每次mutation之后会调用
+    window.localStorage.setItem('PlantHouse-cart', JSON.stringify(state.cart))
+  })
+}
+
 export default new Vuex.Store({
   strict: true,
   state,
   mutations,
-  getters
+  getters,
+  plugins: [syncStorage]
 })
