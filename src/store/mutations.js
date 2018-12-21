@@ -56,5 +56,8 @@ export default {
   },
   [mutationTypes.handleIsShowBack] (state, isShowBack = false) {
     state.isShowBack = isShowBack
+  },
+  [mutationTypes.setPageTitle] (state, pageTitle) {
+    state.pageTitle = pageTitle
   }
 }

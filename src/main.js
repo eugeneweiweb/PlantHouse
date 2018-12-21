@@ -17,6 +17,13 @@ Vue.config.productionTip = false
 
 Vue.use(MintUI)
 
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    store.commit('setPageTitle', to.meta.title)
+  }
+  next()
+})
+
 // 全局混入，每个组件都会有这些
 Vue.mixin({
   filters: {

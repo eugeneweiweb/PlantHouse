@@ -1,6 +1,6 @@
 <template>
   <div class="fheader">
-    <mt-header class="fheader-search" title="PlantHouse">
+    <mt-header class="fheader-search" :title="pageTitle">
       <mt-button v-if="isShowBack" @click="$router.back()" slot="left" icon="back">返回</mt-button>
       <input type="search" placeholder="搜索呢喜欢的商品"/>
     </mt-header>
@@ -18,7 +18,8 @@ export default {
   name: 'fheader',
   computed: {
     ...mapState([
-      'isShowBack'
+      'isShowBack',
+      'pageTitle'
     ])
   }
 }

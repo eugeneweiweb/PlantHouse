@@ -19,7 +19,9 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    title: '首页',
+    meta: {
+      title: '首页'
+    },
     icon: '&#xe768;',
     isTabbar: true,
     components: {
@@ -31,7 +33,9 @@ const routes = [
   {
     path: '/mall',
     name: 'mall',
-    title: '店铺',
+    meta: {
+      title: '店铺'
+    },
     icon: '&#xe731;',
     isTabbar: true,
     components: {
@@ -43,6 +47,9 @@ const routes = [
       {
         path: ':categoriesId',
         name: 'categories',
+        meta: {
+          title: '店铺'
+        },
         components: {
           default: Category,
           fheader: fheader
@@ -54,6 +61,9 @@ const routes = [
   {
     path: '/details/:id',
     name: 'details',
+    meta: {
+      title: '详情'
+    },
     components: {
       default: Details,
       fheader: fheader
@@ -63,7 +73,9 @@ const routes = [
   {
     path: '/cart',
     name: 'cart',
-    title: '购物车',
+    meta: {
+      title: '购物车'
+    },
     icon: '&#xe74b;',
     isTabbar: true,
     components: {
@@ -75,7 +87,9 @@ const routes = [
   {
     path: '/mine',
     name: 'mine',
-    title: '我的',
+    meta: {
+      title: '我的'
+    },
     icon: '&#xe73d;',
     isTabbar: true,
     components: {
@@ -87,6 +101,9 @@ const routes = [
   {
     path: '/login',
     name: 'login',
+    meta: {
+      title: '登录'
+    },
     components: {
       default: Login
     }
@@ -94,6 +111,9 @@ const routes = [
   {
     path: '/register',
     name: 'register',
+    meta: {
+      title: '注册'
+    },
     components: {
       default: Register
     }
