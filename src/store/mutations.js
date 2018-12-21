@@ -53,5 +53,8 @@ export default {
         isChecked: false
       })
     }
+  },
+  [mutationTypes.handleIsShowBack] (state, isShowBack = false) {
+    state.isShowBack = isShowBack
   }
 }
