@@ -15,9 +15,9 @@
             <i>{{item.name}}  {{item.title}}</i>
             <p>
               <em>￥{{item.price | toFix}}</em>
-              <input type="button" value="-" @click="reduceCartItemCount">
+              <input type="button" value="-" @click="reduceCartItemCount(item.id)">
               <span>{{item.count}}</span>
-              <input type="button" value="+" @click="addCartItemCount">
+              <input type="button" value="+" @click="addCartItemCount(item.id)">
             </p></dd>
         </dl>
       </div>
