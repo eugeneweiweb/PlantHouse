@@ -17,8 +17,10 @@
 
 <script>
 
-import Swiper from 'swiper'
-
+import {
+  mapMutations
+} from 'vuex'
+import * as mutationTypes from '../store/mutationTypes'
 export default {
   name: 'detail',
   data () {
@@ -26,48 +28,20 @@ export default {
       details: {}
     }
   },
-  created () {
-    this.$http.getProductDetail(this.$route.params.id)
-      .then(resp => {
-        resp.id = this.$route.params.id
-        this.details = resp
-        this.$nextTick()
-          .then(() => {
-            this.initSwiper()
-          })
-      })
+  created (state) {
+    this.handleIsShowBack(true)
+  },
+  beforeDestroy (state) {
+    this.handleIsShowBack(false)
   },
   methods: {
-    initSwiper () {
-      this.$detailSwiper = new Swiper(this.$refs.swiperContainer, {
-        loop: true, // 循环模式选项
-        // 如果需要分页器
-        pagination: {
-          el: '.swiper-pagination'
-        }
-      })
-    }
+    ...mapMutations([
+      mutationTypes.handleIsShowBack
+    ])
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'swiper/dist/css/swiper.css';
-.swiper-container {
-  width: 100%;
-  height: 0;
-  padding-top: percentage(720/1080);
-  >.swiper-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
 
-    img{
-      max-width: 100%;
-    }
-  }
-  >.swiper-pagination-bullet-active {
-    background-color: #dedede;
-  }
-}
 </style>

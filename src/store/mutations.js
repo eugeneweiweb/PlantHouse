@@ -34,5 +34,8 @@ export default {
       }
       return item
     })
+  },
+  [mutationTypes.handleIsShowBack] (state, isShowBack = false) {
+    state.isShowBack = isShowBack
   }
 }

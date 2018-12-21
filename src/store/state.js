@@ -17,5 +17,6 @@ export default {
     price: 20.00,
     count: 1,
     isChecked: true
-  }]
+  }],
+  isShowBack: false
 }
