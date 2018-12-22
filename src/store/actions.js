@@ -5,6 +5,7 @@ export default {
     postLogin(userInfo)
       .then(resp => {
         window.localStorage.setItem('loginUserInfo', JSON.stringify(resp))
+        window.localStorage.setItem('loginUserInfoToken', JSON.stringify(resp.token))
         store.commit('loginSuccess')
       })
   }
