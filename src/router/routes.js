@@ -90,7 +90,8 @@ const routes = [
     path: '/mine',
     name: 'mine',
     meta: {
-      title: '我的'
+      title: '我的',
+      isAuthRequire: true
     },
     icon: '&#xe73d;',
     isTabbar: true,

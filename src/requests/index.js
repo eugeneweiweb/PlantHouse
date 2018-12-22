@@ -55,3 +55,9 @@ export const postVerifyToken = (loginUserInfoToken) => {
     loginUserInfoToken
   })
 }
+// 用户注册
+export const postRegister = (userInfo) => {
+  return ajax.post(`/api/v1.0.0.0/register`, {
+    ...userInfo
+  })
+}
