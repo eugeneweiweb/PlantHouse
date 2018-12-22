@@ -16,6 +16,21 @@ Vue.prototype.$http = $http
 Vue.config.productionTip = false
 
 Vue.use(MintUI)
+
+// 全局混入，每个组件都会有这些
+Vue.mixin({
+  filters: {
+    // 处理cartCountBadge格式
+    formatCount (v) {
+      return v > 99 ? '99+' : v
+    },
+    // 处理购物车总计格式
+    toFix (v) {
+      return v.toFixed(2)
+    }
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

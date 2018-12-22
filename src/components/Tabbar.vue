@@ -7,6 +7,7 @@
       v-for="route in navData"
       class="tabbar-item">
       <div class="icon">
+        <mt-badge v-if="route.name === 'cart' && cartIsNotEmpty" size="small" color="red" class="badge">{{cartCountBadge | formatCount}}</mt-badge>
         <i class="iconfont" v-html="route.icon"></i>
         <div class="title">{{route.title}}</div>
       </div>
@@ -17,6 +18,9 @@
 <script>
 
 import routes from '@/router/routes'
+import {
+  mapGetters
+} from 'vuex'
 
 export default {
   name: 'tabbar',
@@ -24,6 +28,12 @@ export default {
     return {
       navData: routes.filter(route => route.isTabbar === true)
     }
+  },
+  computed: {
+    ...mapGetters([
+      'cartIsNotEmpty',
+      'cartCountBadge'
+    ])
   }
 }
 </script>
@@ -54,6 +64,12 @@ export default {
         color:#1afa29;
       }
       >.icon{
+        position: relative;
+        >.badge{
+          position: absolute;
+          top: -2vw;
+          right: 3vw;
+        }
         >.iconfont{
           height: 6vw;
           line-height: 6vw;
