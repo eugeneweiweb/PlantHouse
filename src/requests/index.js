@@ -48,3 +48,10 @@ export const postLogin = (userInfo) => {
     ...userInfo
   })
 }
+// 验证Token
+export const postVerifyToken = (loginUserInfoToken) => {
+  return ajax.post(`/api/v1.0.0.0/verifyToken`, {
+    // loginUserInfoToken只有一个值，不能展开
+    loginUserInfoToken
+  })
+}

@@ -33,8 +33,8 @@
 <script>
 import {
   // mapMutations,
-  mapActions
-  // mapState
+  mapActions,
+  mapState
 } from 'vuex'
 // import * as mutationTypes from '../store/mutationTypes'
 import * as actionTypes from '../store/actionTypes'
@@ -48,11 +48,21 @@ export default {
       passwordState: ''
     }
   },
-  // computed: {
-  //   ...mapState([
-  //     'isLogin'
-  //   ])
-  // },
+  watch: {
+    isLogin () {
+      if (this.isLogin === true) {
+        const {
+          redirect = '/home'
+        } = this.$route.params
+        this.$route.push(redirect)
+      }
+    }
+  },
+  computed: {
+    ...mapState([
+      'isLogin'
+    ])
+  },
   methods: {
     // ...mapMutations([
     //   mutationTypes.loginSuccess

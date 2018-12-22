@@ -66,7 +66,8 @@ const routes = [
     },
     components: {
       default: Details,
-      fheader: fheader
+      fheader: fheader,
+      tabbar: Tabbar
     },
     props: true
   },
