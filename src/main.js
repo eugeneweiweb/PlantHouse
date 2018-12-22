@@ -17,10 +17,12 @@ Vue.config.productionTip = false
 
 Vue.use(MintUI)
 
+// 添加全局守卫
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
     store.commit('setPageTitle', to.meta.title)
   }
+  // 必须next
   next()
 })
 
