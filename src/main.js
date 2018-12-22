@@ -60,6 +60,7 @@ router.beforeEach((to, from, next) => {
   } else {
     if (to.meta.title) {
       store.commit('setPageTitle', to.meta.title)
+      store.commit('displayUserInfo')
     }
     // 必须next
     next()

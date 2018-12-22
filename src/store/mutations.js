@@ -70,5 +70,13 @@ export default {
   // 登录成功
   [mutationTypes.loginSuccess] (state) {
     state.isLogin = true
+  },
+  // 显示登录用户信息
+  [mutationTypes.displayUserInfo] (state) {
+    if (state.isLogin === true) {
+      const loginUserInfo = JSON.parse(window.localStorage.getItem('loginUserInfo'))
+      state.loginUserName = loginUserInfo.loginUserName
+      state.loginUserPortraitUrl = loginUserInfo.headPortrait
+    }
   }
 }

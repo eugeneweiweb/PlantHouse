@@ -54,7 +54,7 @@ export default {
         const {
           redirect = '/home'
         } = this.$route.params
-        this.$route.push(redirect)
+        this.$router.push(redirect)
       }
     }
   },
