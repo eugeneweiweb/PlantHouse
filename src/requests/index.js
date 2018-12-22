@@ -42,3 +42,9 @@ export const getProductList = (categoriesId) => {
 export const getProductDetail = (productId) => {
   return ajax.get(`/api/v1.0.0.0/detail/${productId}`)
 }
+// 用户登录
+export const postLogin = (userInfo) => {
+  return ajax.post(`/api/v1.0.0.0/login`, {
+    ...userInfo
+  })
+}

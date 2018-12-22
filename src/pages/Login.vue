@@ -32,11 +32,12 @@
 
 <script>
 import {
-  mapMutations
+  // mapMutations,
+  mapActions
   // mapState
 } from 'vuex'
-import * as mutationTypes from '../store/mutationTypes'
-
+// import * as mutationTypes from '../store/mutationTypes'
+import * as actionTypes from '../store/actionTypes'
 export default {
   name: 'login',
   data () {
@@ -53,8 +54,11 @@ export default {
   //   ])
   // },
   methods: {
-    ...mapMutations([
-      mutationTypes.loginSuccess
+    // ...mapMutations([
+    //   mutationTypes.loginSuccess
+    // ]),
+    ...mapActions([
+      actionTypes.login
     ]),
     detectionUsername () {
       // 用户名正则，4到16位（字母，数字，下划线，减号）
@@ -79,7 +83,15 @@ export default {
       this.detectionPassword()
       // 判断用户名与密码格式是否正确
       if (this.usernameState === 'success' && this.passwordState === 'success') {
-        this.loginSuccess()
+        // this.loginSuccess()
+        const {
+          username,
+          password
+        } = this
+        this.login({
+          username,
+          password
+        })
       } else {
         // 全局使用了MintUi,MintUi全局添加了$toast
         this.$toast({
