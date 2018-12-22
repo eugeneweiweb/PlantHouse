@@ -6,7 +6,6 @@
 
 <script>
 
-
 import {
   mapMutations
 } from 'vuex'

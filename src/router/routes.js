@@ -74,7 +74,8 @@ const routes = [
     path: '/cart',
     name: 'cart',
     meta: {
-      title: '购物车'
+      title: '购物车',
+      isAuthRequire: true
     },
     icon: '&#xe74b;',
     isTabbar: true,
@@ -105,7 +106,8 @@ const routes = [
       title: '登录'
     },
     components: {
-      default: Login
+      default: Login,
+      fheader: fheader
     }
   },
   {
@@ -115,7 +117,8 @@ const routes = [
       title: '注册'
     },
     components: {
-      default: Register
+      default: Register,
+      fheader: fheader
     }
   }
 ]
