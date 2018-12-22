@@ -67,9 +67,8 @@ export default {
   [mutationTypes.setPageTitle] (state, pageTitle) {
     state.pageTitle = pageTitle
   },
-  // xx
-  [mutationTypes] () {
-
+  // 登录成功
+  [mutationTypes.loginSuccess] (state) {
+    state.isLogin = true
   }
- }
-
+}
